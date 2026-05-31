@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+echo " ==sync"
+
+set -e
+
+if [[ -z $1 ]]; then
+    echo "BUCKET_NAME is required"
+    exit
+fi
+
+if [[ -z $2 ]]; then
+    echo "FILENAME_PREFIX is required"
+fi
+
+BUCKET_NAME=$1
+FILENAME_PREFIX=$2
+DIRNAME=$(dirname $FILENAME_PREFIX)
+
+NUM_FILES=$((RANDOM % 6 + 5))
+
+
+mkdir -p $DIRNAME
+
+for ((i = 0; i <= NUM_FILES; i++)) 
+do
+
+    FILENAME="${FILENAME_PREFIX}_${i}.txt"
+    CONTENT=$RANDOM
+    echo "$CONTENT" > $FILENAME
+done
+
+aws s3 sync $DIRNAME s3://$BUCKET_NAME

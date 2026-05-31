@@ -1,0 +1,13 @@
+#!bin/bash
+
+set -e
+
+if [[ -z $1 ]]; then
+    echo "Parameter BUCKET_NAME is required"
+    exit
+fi
+
+BUCKET_NAME=$1
+
+aws s3api create-bucket \
+--bucket $BUCKET_NAME

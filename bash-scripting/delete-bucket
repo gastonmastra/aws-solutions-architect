@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+    echo "BUCKET_NAME is required"
+    exit
+fi
+
+BUCKET_NAME=$1
+
+aws s3api delete-bucket \
+--bucket $BUCKET_NAME

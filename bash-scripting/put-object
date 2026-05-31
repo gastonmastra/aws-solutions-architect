@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ -z $1 ]]; then
+    echo "BUCKET_NAME is required"
+    exit
+fi
+
+if [[ -z $2 ]]; then
+    echo "FILENAME_PREFIX is required"
+fi
+
+BUCKET_NAME=$1
+FILENAME_PREFIX=$2
+
+for ((i = 0; i < 5 + rand(); i++)) 
+do
+    FILENAME="($FILENAME_PREFIX)_($i).txt"
+    CONTENT=
+
+    aws s3api put-
+done
+
+
+aws s3api put-object

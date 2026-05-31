@@ -12,13 +12,14 @@
 		"ghcr.io/devcontainers/features/powershell:2": {
 			"version": "latest"
 		}
+
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "/bin/bash .devcontainer/post-start",
+	// "postCreateCommand": "/bin/bash .devcontainer/post-start",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
@@ -27,7 +28,8 @@
 	// "remoteUser": "root"
 
 	"mounts": [
-		"source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,readonly"
+		"source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,readonly",
+		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
 	],
 
 	"containerEnv": {

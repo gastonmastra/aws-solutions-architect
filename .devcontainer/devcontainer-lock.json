@@ -9,6 +9,11 @@
       "version": "2.0.2",
       "resolved": "ghcr.io/devcontainers/features/powershell@sha256:82ea3880c5706ac3963f1b5e940a7f5871835393a5472f80008148b995d58d61",
       "integrity": "sha256:82ea3880c5706ac3963f1b5e940a7f5871835393a5472f80008148b995d58d61"
+    },
+    "ghcr.io/postfinance/devcontainer-features/dotnet:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/postfinance/devcontainer-features/dotnet@sha256:22bce48a820093d32fb49f321fd2ab37b18e0b0e68d73b3edd13bcffb9efaf63",
+      "integrity": "sha256:22bce48a820093d32fb49f321fd2ab37b18e0b0e68d73b3edd13bcffb9efaf63"
     }
   }
 }
